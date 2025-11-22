@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inen Memorise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="site">
+    <header>
+    <div class="brand-title">Inen Memorise</div>
+  </a>
+
+ <nav class="top-nav">
+  <a href="halaman utama.html"class="active">Beranda</a>
+  <a href="layanan.html">Layanan</a>
+  <a href="produk.html">Produk</a>
+  <a href="pemesanan.html">Pemesanan</a>
+  <a href="kontak.html" >Profil</a>
+</nav>
+
+</header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Fotografer Profesional</div>
+        <h1>Mengabadikan momen dengan gaya yang autentik & timeless.</h1>
+        <p class="lead">Saya menangkap emosi, cahaya, dan cerita di balik setiap foto. Spesialis portrait, wedding, dan editorial.</p>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="location.href='pemesanan.html'">Book Sekarang</button>
+          <button class="btn btn-ghost" onclick="location.href='produk.html'">Lihat Portfolio</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="kamera.jpg" alt="Hero Photography">
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <div class="service card">
+        <h3>Portrait</h3>
+        <p>Studio & outdoor untuk personal branding dan headshots.</p>
+      </div>
+      <div class="service card">
+        <h3>Wedding</h3>
+        <p>Full-day wedding, prewedding, dan intimate ceremony.</p>
+      </div>
+      <div class="service card">
+        <h3>Commercial</h3>
+        <p>Produk, editorial brand, dan retouching profesional.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Inen Corp — Semua Hak Dilindungi.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+// ============================
+// NAVBAR SHRINK SAAT SCROLL
+// ============================
+const header = document.querySelector("header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+      header.classList.add("shrink");
+  } else {
+      header.classList.remove("shrink");
+  }
+});
+
+// ============================
+// FADE-IN ELEMENT SAAT MUNCUL
+// ============================
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+      }
+  });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+// ============================
+// ANIMASI HERO MASUK
+// ============================
+window.addEventListener("load", () => {
+  document.querySelector(".hero-left").classList.add("hero-appear");
+  document.querySelector(".hero-right img").classList.add("image-appear");
+});
+</script>
+
+</body>
+</html>

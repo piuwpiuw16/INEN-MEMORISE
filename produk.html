@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio — Inen Memorise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="site">
+
+    <header>
+      <a href="kontak.html" class="brand">
+        <div class="logo">NF</div>
+        <div>
+          <div class="brand-title">Inen Memorise</div>
+          <div class="brand-sub">Portfolio Profesional</div>
+        </div>
+      </a>
+     <nav class="top-nav">
+  <a href="halaman utama.html">Beranda</a>
+  <a href="layanan.html">Layanan</a>
+  <a href="produk.html"class="active">Produk</a>
+  <a href="pemesanan.html">Pemesanan</a>
+  <a href="kontak.html" >Profil</a>
+</nav>
+
+    </header>
+
+    <section class="portfolio-page">
+      <h2>Portfolio</h2>
+      <div class="gallery">
+        <div class="photo"><img src="1.jpg"></div>
+        <div class="photo"><img src="2.jpg"></div>
+        <div class="photo"><img src="9.jpg"></div>
+        <div class="photo"><img src="13.jpg"></div>
+        <div class="photo"><img src="8.jpg"></div>
+        <div class="photo"><img src="3.jpg"></div>
+        <div class="photo"><img src="10.jpg"></div>
+        <div class="photo"><img src="14.jpg"></div>
+        <div class="photo"><img src="4.jpg"></div>
+        <div class="photo"><img src="5.jpg"></div>
+        <div class="photo"><img src="6.jpg"></div>
+        <div class="photo"><img src="7.jpg"></div>
+        <div class="photo"><img src="11.jpg"></div>
+        <div class="photo"><img src="12.jpg"></div>
+        <div class="photo"><img src="15.jpg"></div>
+     
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Inen Corp — Semua Hak Dilindungi.
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+// Observer untuk animasi fade + slide
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+// Animasi judul
+const title = document.querySelector(".portfolio-page h2");
+title.classList.add("fade-in-up");
+observer.observe(title);
+
+// Animasi semua foto portfolio
+document.querySelectorAll(".photo").forEach(photo => {
+  photo.classList.add("fade-in-up");
+  observer.observe(photo);
+});
+</script>
+
+</body>
+</html>

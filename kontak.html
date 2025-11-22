@@ -1,0 +1,99 @@
+<!-- NAVIGASI KANAN ATAS -->
+<nav class="top-nav">
+  <a href="halaman utama.html">Beranda</a>
+  <a href="layanan.html">Layanan</a>
+  <a href="produk.html">Produk</a>
+  <a href="pemesanan.html">Pemesanan</a>
+  <a href="kontak.html" class="active">Profil</a>
+</nav>
+<body>
+<section class="contact-page card">
+
+  <h2 class="title">Tentang Pemilik</h2>
+  <link rel="stylesheet" href="style.css">
+
+  <div class="owner-bio">
+
+    <div class="bio-image">
+      <img src="pp.jpg" alt="Foto Pemilik">
+    </div>
+
+    <div class="bio-text">
+
+      <div class="highlight-box">
+        <h3 class="owner-name">Muhammad Isnaeni Fakhri</h3>
+        <p class="owner-role">Fotografer • Portrait | Wedding | Editorial</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="bio-paragraph">
+        Saya seorang fotografer profesional yang telah berkarya lebih dari 
+        <strong>6 tahun</strong> di dunia kreatif.  
+        Saya percaya bahwa setiap momen memiliki cerita, dan tugas saya adalah menangkap 
+        cerita itu melalui cahaya, ekspresi, dan komposisi yang natural.
+      </p>
+
+      <p class="bio-paragraph">
+        Berbasis di <strong>Kota BEKASI</strong>, saya juga tersedia untuk perjalanan 
+        ke seluruh Indonesia.
+      </p>
+
+      <p class="bio-paragraph">
+        Saya merupakan lulusan dari <strong>SMA Islam Terpadu YAPIDH</strong>, 
+        jurusan <strong>Multimedia</strong> yang memperkuat dasar saya dalam dunia 
+        fotografi, desain, dan industri kreatif.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="contact-info">
+        <p>📩 Email: <strong>inenmemrorise@gmail.com</strong></p>
+        <p>📱 WhatsApp: <strong>08xx-xxxx-xxxx</strong></p>
+        <p>📷 Instagram: <strong>@Inen_memorise</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="back-button-container">
+    <a href="halaman utama.html" class="back-button">← Kembali ke Halaman Utama</a>
+  </div>
+
+</section>
+<script>
+// ==========================
+// Fade-in Observer
+// ==========================
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".fade-in, .bio-image").forEach(el => observer.observe(el));
+
+
+// ==========================
+// Ripple effect button
+// ==========================
+document.querySelectorAll(".ripple-btn").forEach(btn => {
+  btn.addEventListener("click", function(e) {
+    const circle = document.createElement("span");
+    const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+    const radius = diameter / 2;
+
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${e.clientX - btn.offsetLeft - radius}px`;
+    circle.style.top = `${e.clientY - btn.offsetTop - radius}px`;
+
+    this.appendChild(circle);
+
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+</script>
+
+</body>

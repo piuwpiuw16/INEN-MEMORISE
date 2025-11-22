@@ -1,0 +1,65 @@
+<section id="services" class="services card">
+<link rel="stylesheet" href="style.css">
+  <h2>Layanan Kami</h2>
+  <div class="site">
+    <header>
+    <div class="brand-title">Inen Memorise</div>
+  </a>
+    <nav class="top-nav">
+    <a href="halaman utama.html">Beranda</a>
+    <a href="layanan.html"class="active">Layanan</a>
+    <a href="produk.html">Produk</a>
+    <a href="pemesanan.html">Pemesanan</a>
+    <a href="kontak.html" >Profil</a>
+    </nav>
+</header>
+<body>
+<div class="services-grid">
+    <div class="service-card">
+      <div class="icon">💍</div>
+      <h3>Wedding Photography</h3>
+      <p>Abadikan momen spesial Anda dengan gaya elegan & natural.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">📸</div>
+      <h3>Portrait / Personal Branding</h3>
+      <p>Cocok untuk konten profesional, model, dan keperluan bisnis.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="icon">📦</div>
+      <h3>Product Shoot</h3>
+      <p>Foto produk berkualitas tinggi untuk UMKM hingga brand besar.</p>
+    </div>
+  </div>
+    <a href="halaman utama.html" class="back-home">← Kembali ke Halaman Utama</a>
+</section>
+<script>
+// Animasi elemen layanan ketika muncul di layar
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+// Observe semua service-card
+document.querySelectorAll(".service-card").forEach(card => {
+  card.classList.add("fade-in-up");
+  observer.observe(card);
+});
+
+// Observe judul
+const title = document.querySelector("h2");
+title.classList.add("fade-in-up");
+observer.observe(title);
+
+// Tombol kembali (animasi muncul)
+const backBtn = document.querySelector(".back-home");
+backBtn.classList.add("fade-in-up");
+observer.observe(backBtn);
+</script>
+
+</body>
